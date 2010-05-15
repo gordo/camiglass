@@ -1,0 +1,4 @@
+skin      global                Camiglass   global/
+skin      browser               Camiglass   browser/
+skin      mozapps               Camiglass   mozapps/
+skin      communicator          Camiglass   communicator/

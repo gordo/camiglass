@@ -1,0 +1,141 @@
+
+
+.searchbar-textbox {
+  margin-left: 14px;
+  margin-right: 13px;
+  -moz-appearance: none;
+  font: icon;
+  height: 28px;
+  width: 5em;
+  min-width: 5em;
+  border: none;
+  margin-top: -3px;
+  margin-bottom: -2px;
+  padding-top: 0px;
+  background-color: transparent;
+}
+
+
+
+.searchbar-textbox > .autocomplete-textbox-container > .textbox-input-box {
+  background: url("chrome://browser/skin/search-bar-background-mid.png") repeat-x;
+}
+window:not([active="true"]) .searchbar-textbox > .autocomplete-textbox-container > .textbox-input-box  {
+  background: url("chrome://browser/skin/search-bar-background-mid-inactive.png") repeat-x;
+}
+
+.textbox-input-box { 
+  margin-right: 0px !important;
+}
+
+.searchbar-engine-image {
+  width: 16px;
+  height: 16px;
+  -moz-margin-start: 3px;
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+   display: none !important;
+}
+
+
+.searchbar-engine-button {
+  background: url("chrome://browser/skin/search-bar-background-left.png") no-repeat;
+  height: 28px;
+  -moz-appearance: none;
+  min-width: 0;
+  margin: 0 0px 0 -18px;
+  padding: 2px 0 2px 19px;
+  border: 0;
+  -moz-box-align: center;
+}
+
+window:not([active="true"]) .searchbar-engine-button {
+  background: url("chrome://browser/skin/search-bar-background-left-inactive.png") no-repeat;
+}
+
+.searchbar-engine-button > .button-box {
+  -moz-appearance: none;
+  padding: 0;
+  padding-right: 3px;
+  border: 0;
+}
+
+.searchbar-engine-button[addengines="true"] > .button-box {
+  background: transparent url(chrome://browser/skin/Search-addengines.png) no-repeat right center;
+}
+
+
+.searchbar-dropmarker-image {
+  list-style-image: url("chrome://browser/skin/search-arrow-dn.png");
+  width: 7px !important;
+  height: 7px !important;
+   -moz-appearance: none;
+}
+
+.searchbar-engine-button[addengines="true"] .searchbar-dropmarker-image {
+  list-style-image: url("chrome://browser/skin/add_search-arrow-dn.png");
+}
+
+.search-go-container {
+  -moz-box-align: center;
+  background: url("chrome://browser/skin/search-bar-background-right.png") no-repeat right top;
+  height: 28px;
+  margin-right: -13px;
+  padding-right: 4px;
+}
+
+window:not([active="true"]) .search-go-container {
+  background: url("chrome://browser/skin/search-bar-background-right-inactive.png") no-repeat right top;
+}
+
+#searchbar > textbox[empty="true"] .search-go-button {
+  list-style-image: url("chrome://browser/skin/Search.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+  padding: 0px;
+}
+#searchbar > textbox[isempty="true"] .search-go-button {
+  list-style-image: url("chrome://browser/skin/Search.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+  padding: 0px;
+}
+
+.search-go-button {
+  padding: 1px;
+  list-style-image: url("chrome://browser/skin/Search.png");
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.search-go-button:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+
+.search-go-button[disabled="true"] {
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+.searchbar-engine-menuitem[selected="true"] > .menu-iconic-text {
+  font-weight: bold;
+}
+
+
+/* ::::: focused state ::::: */
+
+textbox[focused="true"] > .autocomplete-textbox-container > .textbox-input-box {
+  background: url("chrome://browser/skin/search-bar-background-mid-focus.png") repeat-x;
+}
+textbox[focused="true"]:-moz-system-metric(mac-graphite-theme) > .autocomplete-textbox-container > .textbox-input-box {
+  background: url("chrome://browser/skin/search-bar-background-mid-focus-graphite.png") repeat-x;
+}
+
+textbox[focused="true"] .searchbar-engine-button {
+  background: url("chrome://browser/skin/search-bar-background-left-focus.png") no-repeat left center;
+}
+textbox[focused="true"]:-moz-system-metric(mac-graphite-theme)  .searchbar-engine-button {
+  background: url("chrome://browser/skin/search-bar-background-left-focus-graphite.png") no-repeat left center;
+}
+
+textbox[focused="true"] .search-go-container {
+  background: url("chrome://browser/skin/search-bar-background-right-focus.png") no-repeat right center;
+}
+textbox[focused="true"]:-moz-system-metric(mac-graphite-theme)  .search-go-container {
+  background: url("chrome://browser/skin/search-bar-background-right-focus-graphite.png") no-repeat right center;
+}

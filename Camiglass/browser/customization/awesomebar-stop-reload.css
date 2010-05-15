@@ -1,0 +1,68 @@
+#urlbar-icons {
+ -moz-binding: url("chrome://browser/skin/StopReloadButton.xml#StopReloadButton")  !important;
+}
+
+ #editBookmarkPanel {
+  margin-right: -29px !important;
+}
+
+#star-button {
+  padding: 0px 0px 0px 1px !important;
+}
+
+#reload-button,
+#stop-button  {
+  display :none !important;
+  -moz-margin-start: 0px !important;
+  -moz-margin-end: -1px !important;
+}
+
+#StopReloadButton-stack #stop-button,
+#StopReloadButton-stack #reload-button {
+  display:-moz-box !important;
+}
+
+#StopReloadButton-stack #stop-button[disabled="true"] {
+  display: none !important;
+}
+
+#stop-button:not([disabled]) + #reload-button {
+  display: none !important;
+}
+
+#stop-button + #reload-button[disabled="true"] { 
+  visibility:hidden !important;
+}
+
+#urlbar[pageproxystate="invalid"] > #urlbar-icons > #StopReloadButton-stack #reload-button,
+#urlbar[pageproxystate="invalid"] > #urlbar-icons > #StopReloadButton-stack #stop-button {
+  display: none !important;
+}
+
+#stop-button > label,
+#reload-button > label{
+  display: none !important;
+}
+
+
+/* ----- STOP BUTTON ----- */	
+
+#stop-button {
+  list-style-image: url("chrome://browser/skin/customization/stop-reload.png") !important;
+  -moz-image-region: rect(0px, 48px, 16px, 32px) !important;
+}
+#stop-button:hover:active {
+  -moz-image-region: rect(0px, 64px, 16px, 48px) !important;
+}
+
+
+/* ----- RELOAD BUTTON ----- */	
+
+#reload-button {
+  list-style-image: url("chrome://browser/skin/customization/stop-reload.png") !important;
+  -moz-image-region: rect(0px 16px 16px 0px) !important;
+
+}
+#reload-button:active:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px) !important;
+ }

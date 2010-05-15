@@ -1,0 +1,3 @@
+.tabbrowser-tabs:not([closebuttons="noclose"]):not([closebuttons="closeatend"]) > .tabbrowser-tab:not(:only-child) > .tab-close-button {
+visibility: visible !important;
+}

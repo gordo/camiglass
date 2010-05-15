@@ -1,0 +1,84 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+notification {
+  padding: 3px 0px 3px 3px !important;
+}
+
+notification[type="info"] {
+  color: #000;
+  -moz-border-image: url("chrome://global/skin/notification/info-bar-background.png")  1 1 stretch;
+  padding-top: 1px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+notification[type="warning"] {
+  color: #232323;
+  -moz-border-image: url("chrome://global/skin/notification/warning-bar-background.png") 1 1 stretch;
+  padding-top: 1px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+notification[type="critical"] {
+  color: #FFFFFF;
+   -moz-border-image: url("chrome://global/skin/notification/critical-bar-background.png")  1 1 stretch;
+  padding-top: 1px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.messageImage {
+  width: 16px;
+  height: 16px;
+  margin: 0 4px;
+}
+
+/* Default icons for notifications */
+
+notification[type="info"] .messageImage {
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
+}
+
+notification[type="warning"] .messageImage {
+  list-style-image: url("chrome://global/skin/icons/warning-16.png");
+}
+
+notification[type="critical"] .messageImage {
+  list-style-image: url("chrome://global/skin/icons/error-16.png");
+}
+
+.notification-inner {
+  border: 0 !important;
+}
+
+.messageText {
+  margin: 0 3px !important;
+  padding: 0;
+  text-shadow: rgba(255, 255, 255, 0.6) 0 1px;
+}
+
+
+.messageCloseButton {
+  -moz-appearance: none;
+  padding-right: 4px;
+  list-style-image: url("chrome://global/skin/icons/closetab.png") !important;
+  border: none;
+}
+
+.messageCloseButton > .toolbarbutton-text {
+  display: none;
+}
+
+.messageCloseButton:hover {
+  list-style-image: url("chrome://global/skin/icons/closetab-hover.png") !important;
+}
+
+.messageCloseButton:hover:active {
+  list-style-image: url("chrome://global/skin/icons/closetab-active.png") !important;
+}
+
+
+
+
+

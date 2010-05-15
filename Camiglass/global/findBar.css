@@ -1,0 +1,331 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: find toolbar ::::: */
+
+window:not([active="true"]) findbar {
+  background: -moz-mac-chrome-inactive url("chrome://global/skin/icons/findbar-bg-inactive.png")  repeat-x;
+  border-top: 1px solid #878787;
+}
+
+findbar {
+  background: -moz-mac-chrome-active url("chrome://global/skin/icons/findbar-bg.png")  repeat-x;
+  border-top: 1px solid #555555;
+  border-bottom: none;
+  min-width: 1px;
+  height: 26px;
+  max-height: 26px;
+  padding-top: 1px;
+  padding-bottom: 4px;
+}
+
+window#viewSource findbar {
+  height: 24px !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+
+.findbar-closebutton {
+  margin-left: -2px;
+  list-style-image: url("chrome://global/skin/icons/closetab.png");
+  border: none;
+}
+
+.findbar-closebutton:hover {
+  background-image: none !important;
+  list-style-image: url("chrome://global/skin/icons/closetab-hover.png") !important;
+}
+
+.findbar-closebutton:hover:active {
+  list-style-image: url("chrome://global/skin/icons/closetab-active.png") !important;
+}
+
+
+.findbar-container > toolbarbutton,
+.findbar-container > hbox > toolbarbutton {
+  padding-left: 7px;
+  margin-top: 1px;
+}
+
+label {
+  margin: 0px !important;
+}
+
+window:not([active="true"]) .findbar-container > label,
+window:not([active="true"]).findbar-container > description {
+  color: #5E5E5E;
+}
+
+label.findbar-find-fast,
+.findbar-container > description {
+  font-weight: bold;
+  color: #404040;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px;
+}
+
+
+window:not([active="true"]) .findbar-container > checkbox > .checkbox-label-box  {
+  color: #5E5E5E !important;
+}
+
+.findbar-container > checkbox > .checkbox-label-box  {
+  margin: 2px  0px -2px 0px !important;
+  padding: 0px 10px 0px 2px !important;
+  font-weight: bold;
+  color: #404040;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px;
+}
+
+window:not([active="true"]) .toolbarbutton-text  {
+  color: #5E5E5E !important;
+}
+
+.toolbarbutton-text  {
+  font-weight: bold;
+  color: #404040;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px !important; 
+}
+
+
+
+.findbar-textbox {
+  -moz-binding: url("chrome://global/content/bindings/findbar.xml#findbar-textbox");
+  background: url("chrome://global/skin/icons/find-bar-background.png") no-repeat;
+  -moz-appearance: none;
+  height: 25px !important;
+  width: 188px !important;
+  border: none !important;
+  margin: -2px 4px -1px 4px;
+  padding: 5px 14px 4px 22px;
+  font: icon;
+}
+
+.findbar-textbox[focused="true"] {
+  outline: none !important;
+  border: none !important;
+  background: url("chrome://global/skin/icons/find-bar-background-focus.png") no-repeat;
+}
+.findbar-container:-moz-system-metric(mac-graphite-theme) > .findbar-textbox[focused="true"] {
+  background: url("chrome://global/skin/icons/find-bar-background-focus-graphite.png") no-repeat;
+}
+
+.findbar-textbox[flash="true"] {
+  background: url("chrome://global/skin/icons/find-bar-flash.png") no-repeat;
+}
+
+.findbar-textbox[status="notfound"] {
+  color: #2c406f !important;
+}
+
+/* find-next button */
+
+.findbar-find-next {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+window:not([active="true"]) .findbar-find-next {
+  list-style-image: url("chrome://global/skin/icons/find-inactive.png");
+}
+
+.findbar-find-next:hover,
+.findbar-find-next:active:hover {
+  -moz-image-region: rect(16px 16px 32px 0px);
+}
+
+.findbar-find-next[disabled="true"] {
+  -moz-image-region: rect(32px 16px 48px 0px) !important;
+}
+
+/* find-previous button */
+
+.findbar-find-previous {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+window:not([active="true"]) .findbar-find-previous {
+  list-style-image: url("chrome://global/skin/icons/find-inactive.png");
+}
+
+.findbar-find-previous:hover,
+.findbar-find-previous:active:hover {
+  -moz-image-region: rect(16px 32px 32px 16px);
+}
+
+.findbar-find-previous[disabled="true"] {
+  -moz-image-region: rect(32px 32px 48px 16px) !important;
+}
+
+
+/* highlight button */
+
+.findbar-container > toolbarbutton.findbar-highlight {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+window:not([active="true"]) toolbarbutton.findbar-highlight {
+  list-style-image: url("chrome://global/skin/icons/find-inactive.png");
+}
+
+.findbar-container > toolbarbutton.findbar-highlight:hover {
+  -moz-image-region: rect(16px 48px 32px 32px);
+}
+
+.findbar-container > toolbarbutton.findbar-highlight[disabled="true"] {
+  -moz-image-region: rect(32px 48px 48px 32px) !important;
+}
+
+.findbar-container> toolbarbutton.findbar-highlight:active:hover, .findbar-container > .findbar-highlight[checked="true"] {
+  -moz-image-region: rect(48px 48px 64px 32px);
+}
+
+.findbar-container > toolbarbutton.findbar-highlight[checked="true"]:hover {
+  -moz-image-region: rect(64px 48px 80px 32px);
+}
+
+image.find-status-icon {
+  display: none;
+}
+ 	
+label.findbar-find-fast {
+  display: none;
+  margin: 2px  0px  0px  6px;
+  font-weight: bold;
+}
+
+.findbar-find-status {
+  margin: 0px !important;
+  font-weight: bold;
+  padding: 3px 7px 2px 2px !important;
+  color: #3e5e8d !important;
+}
+
+window:not([active="true"]) .findbar-find-next > .toolbarbutton-text,
+window:not([active="true"]) .findbar-find-previous > .toolbarbutton-text,
+window:not([active="true"]) .findbar-highlight > .toolbarbutton-text {
+  color: #5E5E5E;
+}
+.findbar-find-next > .toolbarbutton-text,
+.findbar-find-previous > .toolbarbutton-text,
+.findbar-highlight > .toolbarbutton-text {
+  padding: 2px 7px 2px 4px !important;
+}
+
+.findbar-find-next:not([disabled]):hover > .toolbarbutton-text, 
+.findbar-find-previous:not([disabled]):hover > .toolbarbutton-text,
+.findbar-highlight:not([disabled]):hover > .toolbarbutton-text {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-customhover-right.png") no-repeat right center;
+  color: #fff;
+  text-shadow: #353535 0px 1px 0px !important;
+}
+
+
+window:not([active="true"]) .findbar-highlight[checked="true"] > .toolbarbutton-text {
+  color: #fff !important;
+  text-shadow: #282828 0px 1px 0px !important;
+}
+window:not([active="true"]) .findbar-highlight[checked="true"] {
+    opacity: 0.7 !important;
+}
+
+.findbar-find-next:not([disabled]):hover:active > .toolbarbutton-text, 
+.findbar-find-previous:not([disabled]):hover:active > .toolbarbutton-text,
+.findbar-highlight:not([disabled]):active:hover > .toolbarbutton-text,
+.findbar-highlight[checked="true"] > .toolbarbutton-text,
+.findbar-highlight[checked="true"]:hover > .toolbarbutton-text {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-open-right.png") no-repeat right center;
+  color: #fff;
+  text-shadow: #282828 0px 1px 0px !important;
+}
+
+
+.findbar-find-next:not([disabled]):hover,
+.findbar-find-previous:not([disabled]):hover,
+.findbar-highlight:not([disabled]):hover {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-customhover-left.png") no-repeat left center;
+}
+
+.findbar-find-next:not([disabled]):active:hover,
+.findbar-find-previous:not([disabled]):active:hover,
+.findbar-highlight:not([disabled]):active:hover,
+.findbar-highlight[checked="true"],
+.findbar-highlight[checked="true"]:hover {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-open-left.png") no-repeat left center;
+}
+
+.findbar-find-next > .toolbarbutton-icon,
+.findbar-find-previous > .toolbarbutton-icon {
+  margin: 0px;
+}
+
+
+.findbar-find-next:not([disabled]):hover > .toolbarbutton-icon,
+.findbar-find-previous:not([disabled]):hover > .toolbarbutton-icon {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-customhover-mid.png") repeat-x;
+}
+.findbar-find-next:not([disabled]):active:hover > .toolbarbutton-icon,
+.findbar-find-previous:not([disabled]):active:hover > .toolbarbutton-icon {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-open-mid.png") repeat-x;
+}
+
+.findbar-highlight:not([disabled]):hover > .toolbarbutton-icon  {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-customhover-mid.png") repeat-x;
+}
+
+.findbar-highlight:not([disabled]):active:hover > .toolbarbutton-icon,
+.findbar-highlight[checked="true"] > .toolbarbutton-icon,
+.findbar-highlight[checked="true"]:hover > .toolbarbutton-icon {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-open-mid.png") repeat-x;
+}
+
+.findbar-container > checkbox {
+   list-style-image: url("chrome://global/skin/icons/checkbox.png");
+   -moz-image-region: rect(0px 16px 16px 0px);
+   -moz-margin-start: 7px;
+   margin: 0 0 0 7px !important;
+}
+window:not([active="true"]) .findbar-container > checkbox {
+   list-style-image: url("chrome://global/skin/icons/checkbox-inactive.png");
+}
+.findbar-container > checkbox:active:hover {
+   -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+.findbar-container > checkbox[checked] {
+  -moz-image-region: rect(0px 48px 16px 32px) !important;
+}
+
+.findbar-container > checkbox[checked]:hover:active {
+   -moz-image-region: rect(0px 64px 16px 48px) !important;
+}
+
+.findbar-container > checkbox > .checkbox-check {
+  display: none; 
+}
+.findbar-container > checkbox > .checkbox-label-box > .checkbox-icon {
+  -moz-padding-start: 1px;
+  margin: -2px 3px 2px 0px !important;
+}
+
+.findbar-highlight[disabled="true"],
+.findbar-highlight[disabled="true"] > .toolbarbutton-text,
+.findbar-highlight[disabled="true"] > .toolbarbutton-icon,
+.findbar-highlight[disabled="true"][checked="true"]:hover > .toolbarbutton-text  {
+  background: none !important;
+  color: #404040 !important;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px !important; 
+}
+
+window:not([active="true"]) .findbar-highlight[disabled="true"][checked="true"] {
+    opacity: 1.0 !important;
+}
+
+window:not([active="true"]) .findbar-highlight[disabled="true"] > .toolbarbutton-text {
+ color: #5E5E5E !important;
+ text-shadow: rgba(255, 255, 255, 0.5) 0 1px !important; 
+}
+
+window:not([active="true"]) .findbar-highlight[disabled="true"][checked="true"] > .toolbarbutton-text {
+ color: #5E5E5E !important;
+ text-shadow: rgba(255, 255, 255, 0.5) 0 1px !important; 
+ opacity: 0.7 !important;
+}

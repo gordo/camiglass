@@ -1,0 +1,10 @@
+.tabbrowser-tab {
+  -moz-box-direction: normal !important;
+}
+.tab-icon-image {
+  opacity: 0.5 !important;
+  margin-left: 2px;
+}
+.tabbrowser-tab[selected="true"] .tab-icon-image {
+  opacity: 1.0 !important;
+}

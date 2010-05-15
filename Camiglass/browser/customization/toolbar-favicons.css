@@ -1,0 +1,22 @@
+.bookmark-item > .toolbarbutton-icon {
+  padding: 1px 4px 1px 0px !important;
+  margin: 0px !important;
+  display: -moz-box !important;
+}
+
+.bookmark-item[container] > .toolbarbutton-icon {
+    display: none ! important
+}
+
+.bookmark-item:hover > .toolbarbutton-icon {
+ background: url("chrome://global/skin/toolbar/toolbarbutton-customhover-mid.png") repeat-x !important;
+}
+.bookmark-item:hover:active > .toolbarbutton-icon {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-open-mid.png") repeat-x !important;
+}
+toolbarbutton.bookmark-item[container]:hover:active > .toolbarbutton-text,
+toolbarbutton.bookmark-item[container][open="true"] > .toolbarbutton-text,
+toolbarbutton.bookmark-item[container]:hover:active > .toolbarbutton-icon,
+toolbarbutton.bookmark-item[container][open="true"] > .toolbarbutton-icon {
+  background: url("chrome://global/skin/toolbar/toolbarbutton-open-mid.png") repeat-x !important;
+}

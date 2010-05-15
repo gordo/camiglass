@@ -1,0 +1,222 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Mozilla Communicator client code, released
+ * March 31, 1998.
+ *
+ * The Initial Developer of the Original Code is
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Joe Hewitt (hewitt@netscape.com)
+ *   Kevin Gerich (webmail@kmgerich.com)
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/* ===== toolbar.css ====================================================
+  == Styles used by XUL toolbar-related elements.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: toolbox ::::: */
+
+
+#navigator-toolbox {
+  border-bottom: 1px solid #565656;
+}
+
+window:not([active="true"]) #navigator-toolbox {
+  border-bottom: 1px solid #878787;
+}
+
+#nav-bar {
+ padding: 4px 4px 4px 5px;
+ margin: 0px;
+}
+ 
+ #nav-bar[collapsed="true"] + toolbar[customindex] {
+  border-top: 2px solid;
+  -moz-border-top-colors: rgba(0,0,0,0.35) rgba(255,255,255,0.46);
+ } 
+
+/* ::::: toolbar & menubar ::::: */
+
+window:not([active="true"]) toolbar,
+window:not([active="true"]) toolbarpalette {
+  background-color: -moz-mac-chrome-inactive;
+  border-top: 1px solid rgba(255,255,255,0.40);
+  border-bottom: 1px solid rgba(0,0,0,0.38);
+}
+
+toolbar,
+toolbarpalette {
+  min-width: 1px;
+  min-height: 20px;
+  color: #000000;
+  background-color: -moz-mac-chrome-active; 
+  border-top: 1px solid rgba(255,255,255,0.40);
+  border-bottom: 1px solid rgba(0,0,0,0.42);
+  text-shadow: rgba(255, 255, 255, 0.4) 0 1px;
+}
+
+#main-window  toolbar,
+#main-window  toolbarpalette {
+  border-top: 0px !important;
+  border-bottom: 0px  !important;
+}
+
+menubar {
+  -moz-appearance: dialog;
+  min-width: 1px;
+}
+
+#PersonalToolbar {
+  margin-top: -1px;
+  padding-left: 4px;
+}
+
+.toolbar-holder {
+ min-width: 1px;
+} 
+
+/* toolbar unified */
+
+.toolbar-primary,
+window > toolbox:nth-of-type(1) > toolbar:nth-of-type(1) {
+  -moz-appearance: -moz-mac-unified-toolbar;
+}
+#main-window .toolbar-primary,
+#main-window > toolbox:nth-of-type(1) > toolbar:nth-of-type(1) {
+  margin-bottom: -1px !important;
+}
+
+/* toolbar collapsing */
+
+window[chromehidden~="toolbar"] .toolbar-primary,
+window .toolbar-primary[collapsed="true"],
+window[chromehidden~="toolbar"]  > toolbox:nth-of-type(1) > toolbar:nth-of-type(1):not(.chromeclass-menubar),
+window > toolbox:nth-of-type(1) > toolbar:nth-of-type(1)[collapsed="true"]:not(.chromeclass-menubar) {
+  display: -moz-box;
+  visibility: visible;
+  min-height: 4px !important;
+  height: 4px !important;
+  overflow: hidden;
+}
+
+window[chromehidden~="toolbar"] .toolbar-primary > *,
+window .toolbar-primary[collapsed="true"] > *,
+window[chromehidden~="toolbar"]  > toolbox:nth-of-type(1) > toolbar:nth-of-type(1) > *,
+window > toolbox:nth-of-type(1) > toolbar:nth-of-type(1)[collapsed="true"] > * {
+  display: none;
+}
+
+
+/* ::::: toolbarseparator ::::: */
+
+toolbarseparator {
+  -moz-appearance: none;
+  margin: 2px 2px 2px 2px;
+  background: url("chrome://global/skin/toolbar/toolbar-separator.png") transparent repeat-y;
+  padding: 0px;
+  width: 1px !important;
+}
+
+.toolbar-primary {
+	min-height: 24px;
+}
+
+/* ::::: toolbarpaletteitem ::::: */
+
+toolbarpaletteitem {
+  cursor: -moz-grab;
+}
+
+toolbar[iconsize="small"] toolbarpaletteitem[type="spacer"] {
+	min-width: 24px !important;
+}
+
+toolbarpaletteitem[type="spacer"] {
+	min-width: 32px !important;
+}
+
+.toolbarpaletteitem-box[type="spacer"] {
+  border: 1px solid #A3A3A3;
+  background: url("chrome://global/skin/10pct_transparent_grey.png") repeat;
+  height: 32px !important;
+  width: 32px !important;
+  margin-top: 18px;
+}
+
+.toolbarpaletteitem-box[type="spring"] {
+  border: 1px solid #A3A3A3;
+  background: url("chrome://global/skin/toolbar/spring.png") #FFFFFF no-repeat;
+  height: 32px !important;
+  width: 32px !important;
+  margin-top: 18px;
+}
+
+.toolbarpaletteitem-box[type="spring"][place="toolbar"] {
+  border: 1px solid #A3A3A3;
+  background: url("chrome://global/skin/10pct_transparent_grey.png") repeat;
+}
+
+.toolbarpaletteitem-box[type="spacer"][place="toolbar"],
+.toolbarpaletteitem-box[type="spring"][place="toolbar"] {
+  margin: 2px;
+}
+
+.toolbarpaletteitem-box[type="separator"][place="palette"] {
+  width: 2px;
+  height: 50px;
+}
+
+.toolbarpaletteitem-box[type="spacer"][place="palette"],
+.toolbarpaletteitem-box[type="spring"][place="palette"] {
+  margin-bottom: 2px;
+  width: 50px;
+  height: 50px;
+}
+
+/* ..... drag and drop feedback ..... */
+
+toolbarpaletteitem[dragover="left"] {
+  border-left-color: #000000;
+}
+
+toolbarpaletteitem[dragover="right"] {
+  border-right-color: #000000;
+}
+
+toolbar[iconsize="small"] toolbarspacer {
+	min-width: 24px !important;
+}
+
+toolbarspacer {
+	min-width: 32px !important;
+}
+

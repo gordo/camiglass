@@ -1,0 +1,11 @@
+#urlbar .autocomplete-history-dropmarker  {
+  display: -moz-box  !important;
+}
+
+#star-button {
+  padding: 0px 1px 0px 1px !important;
+}
+
+ #editBookmarkPanel {
+  margin-right: -28px !important;
+}

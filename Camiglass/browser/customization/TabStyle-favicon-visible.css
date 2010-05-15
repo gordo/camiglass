@@ -1,0 +1,7 @@
+.tab-icon-image {
+  opacity: 0.5 !important;
+  margin-right: 1px !important;
+}
+.tabbrowser-tab[selected="true"] .tab-icon-image {
+  opacity: 1.0 !important;
+}

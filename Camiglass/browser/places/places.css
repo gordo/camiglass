@@ -1,0 +1,286 @@
+/* Sidebars */
+
+.sidebar-placesTree,
+.sidebar-placesTreechildren::-moz-tree-row {
+  background-color: transparent;
+  border-color: transparent;
+  padding-bottom: 1px;
+  -moz-appearance: none;
+  margin: 0;
+  border: none;
+}
+ 
+.sidebar-placesTreechildren::-moz-tree-row(selected) {
+  background: -moz-linear-gradient(top, #adbdd9, #7c94ba) repeat-x;
+  border-top: 1px solid #9fafcd !important;
+}
+:-moz-system-metric(mac-graphite-theme) .sidebar-placesTreechildren::-moz-tree-row(selected) {
+  background: -moz-linear-gradient(top, #b5c3cf, #8c9fb0) repeat-x;
+  border-top: 1px solid #a2b2be !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-separator {
+  margin: 0 10px;
+}
+
+.sidebar-placesTreechildren::-moz-tree-row(selected,focus) {
+  background: -moz-linear-gradient(top, #59a2e0, #0064bc) repeat-x;
+  border-top: 1px solid #3d91d5 !important;
+}
+:-moz-system-metric(mac-graphite-theme) .sidebar-placesTreechildren::-moz-tree-row(selected,focus) {
+  background: -moz-linear-gradient(top, #8ea3b6, #4a6a85) repeat-x;
+  border-top: 1px solid #778b9f !important;
+} 	
+
+.sidebar-placesTreechildren::-moz-tree-cell-text(selected) {  
+  font-weight: bold !important;
+  color: #fff !important;
+}
+
+
+#viewButton > menupopup {
+  margin-top: 0px;
+}
+
+
+
+#viewButton {
+  -moz-appearance: none;
+  background: url("chrome://global/skin/icons/white-gray-gradient.png") transparent repeat-x center center;
+  -moz-background-clip: padding;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  -moz-border-radius: 10px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0;
+  margin: 1px 4px 2px 0;
+  -moz-padding-start: 5px;
+  -moz-padding-end: 0px;
+  min-height: 16px;
+  height: 16px;
+  font-weight: normal;
+}
+
+#viewButton:hover:active,
+#viewButton[open="true"]{
+  background-image: url("chrome://global/skin/icons/white-gray-gradient-active.png");
+}
+
+#viewButton .button-menu-dropmarker {
+  display: -moz-box;
+  list-style-image: url("chrome://global/skin/icons/menulist-dropmarker.png");
+  margin-left: -2px;
+  margin-top: 0;
+}
+
+#viewButton .button-text {
+  margin-top: 0 !important;
+}
+
+/* Trees */
+
+treechildren::-moz-tree-image(title) {
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+  padding-right: 2px;
+  margin: 0px 2px;
+  width: 16px;
+  height: 16px;
+}
+
+treechildren::-moz-tree-image(title, livemarkItem) {
+  list-style-image: url("chrome://browser/skin/places/livemarkItem.png");
+}
+
+treechildren::-moz-tree-image(title, container) {
+  list-style-image: url("chrome://global/skin/tree/folder.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+
+treechildren::-moz-tree-image(title, open) {
+  list-style-image: url("chrome://global/skin/tree/folder-open.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+treechildren::-moz-tree-image(title, separator) {
+  list-style-image: none;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0;
+}
+
+treechildren::-moz-tree-row(session-start) {
+  border-top:1px dotted ThreeDShadow;
+}
+
+treechildren::-moz-tree-image(container, OrganizerQuery_AllBookmarks) {
+  list-style-image: url("chrome://browser/skin/places/allBookmarks.png");
+}
+
+treechildren::-moz-tree-image(container, livemark) {
+  list-style-image: url("chrome://browser/skin/page-livemarks.png");
+}
+
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksToolbar) {
+  list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png");
+}
+
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu) {
+  list-style-image: url("chrome://browser/skin/places/bookmarksMenu.png");
+}
+
+treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks) {
+  list-style-image: url("chrome://browser/skin/places/unfiledBookmarks.png");
+}
+
+/* query-nodes should be styled even if they're not expandable */
+treechildren::-moz-tree-image(query) {
+  list-style-image: url("chrome://browser/skin/places/query.png");
+}
+
+treechildren::-moz-tree-image(title, query, tagContainer),
+treechildren::-moz-tree-image(container, OrganizerQuery_Tags) {
+  list-style-image: url("chrome://mozapps/skin/places/tagContainerIcon.png");
+}
+
+/* calendar icon for folders grouping items by date */
+treechildren::-moz-tree-image(title, query, dayContainer) {
+  list-style-image: url("chrome://browser/skin/places/history.png");
+ }
+
+treechildren::-moz-tree-image(title, query, hostContainer) {
+  list-style-image: url("chrome://global/skin/tree/folder.png");
+}
+
+treechildren::-moz-tree-image(title, query, hostContainer, open) {
+  list-style-image: url("chrome://global/skin/tree/folder-open.png");
+}
+
+treechildren::-moz-tree-image(query, OrganizerQuery_History) {
+  list-style-image: url("chrome://browser/skin/places/history.png");
+}
+
+/* We want some queries to look like ordinary folders. This must come
+   after the (title, query) selector, or it would get overridden. */
+treechildren::-moz-tree-image(title, query, folder) {
+  list-style-image: url("chrome://global/skin/tree/folder.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+treechildren::-moz-tree-image(title, query, folder, open) {
+  list-style-image: url("chrome://global/skin/tree/folder-open.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+/* FIXME this should make the date field invisible, but only does it for
+         unselected items and maybe won't work for different color schemes. */
+treechildren::-moz-tree-cell-text(date, session-continue) {
+  color:white;
+}
+
+treechildren::-moz-tree-cell-text(title, separator) {
+  color: ThreeDShadow;
+  margin: 0px 5px;
+}
+
+treechildren::-moz-tree-cell-text(title, separator, selected, focus) {
+  color: HighlightText;
+}
+
+treechildren::-moz-tree-twisty(title, separator) {
+  -moz-appearance: none;
+  padding: 0px;
+}
+
+
+/* ::::: tree columns ::::: */
+
+treecol,
+treecolpicker {
+  -moz-appearance: none !important;
+  -moz-box-align: center !important;
+  -moz-box-pack: center !important;
+  border-left: 1px solid !important;
+  border-right: 1px solid !important;
+  border-top: 0px solid !important;
+  border-bottom: 1px solid #696969 !important;
+  background: url("chrome://global/skin/tree/treecol_bg.png") #CECECE !important;
+  padding: 0px 4px !important;
+  -moz-border-top-colors: none !important;
+  -moz-border-right-colors: rgba(0,0,0,0.20) !important;
+  -moz-border-bottom-colors: none !important;
+  -moz-border-left-colors: rgba(255,255,255,0.26) !important;
+}
+
+
+.treecol-image {
+  padding: 0px 1px !important;
+}
+
+
+.treecol-text {
+  margin: 0px !important;
+  padding: 1px 0px 1px 0px !important;
+  font-weight: bold !important;
+  color: #202020 !important;
+  text-shadow: #cfcfcf 0px 1px 0px;
+}
+
+treecol[hideheader="true"] {
+  -moz-appearance: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+
+/* ..... internal box ..... */
+
+
+treecol:active,
+treecolpicker:active {
+  background: url("chrome://global/skin/tree/treecol_bg_pressed.png") #ADADAD !important;
+}
+
+window:not([active="true"])  treecol[sortDirection="ascending"],
+window:not([active="true"])  treecol[sortDirection="descending"] {
+  background: url("chrome://global/skin/tree/treecol_bg.png") #CECECE !important;
+}
+treecol[sortDirection="ascending"],
+treecol[sortDirection="descending"] {
+  background: url("chrome://global/skin/tree/treecol_bg_aktive.png") #9CAFC6 !important;
+}
+
+
+treecol[sortDirection="ascending"]:active,
+treecol[sortDirection="descending"]:active {
+  background: url("chrome://global/skin/tree/treecol_bg_aktive_pressed.png") #6D84A7 !important;
+}
+
+.treecol-sortdirection {
+    width: 7px;
+}
+
+/* ::::: sort direction indicator :::::  */
+
+.treecol-sortdirection {
+  -moz-appearance: none !important;
+  list-style-image: none;
+}
+
+window:not([active="true"]) .treecol-sortdirection[sortDirection="ascending"] {
+  opacity: 0.6 !important;
+}
+
+.treecol-sortdirection[sortDirection="ascending"] {
+  padding-top: 1px !important;
+  list-style-image: url("chrome://global/skin/tree/sort-dsc.png") !important;
+  opacity: 0.8 !important;
+}
+
+window:not([active="true"]) .treecol-sortdirection[sortDirection="descending"] {
+  opacity: 0.6 !important;
+}
+
+.treecol-sortdirection[sortDirection="descending"] {
+  list-style-image: url("chrome://global/skin/tree/sort-asc.png") !important;
+  opacity: 0.8 !important;
+}
+

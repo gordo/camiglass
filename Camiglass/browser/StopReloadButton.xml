@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE bindings [
+<!ENTITY % browserDTD SYSTEM "chrome://browser/locale/browser.dtd" >
+%browserDTD;
+]>
+<!-- StopReloadButton -->
+
+<bindings id="StopReloadButton-bindings"
+   xmlns="http://www.mozilla.org/xbl"
+   xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   xmlns:xbl="http://www.mozilla.org/xbl">
+  <binding  id="StopReloadButton" >
+    <content>
+		<children/>
+		<xul:hbox id="StopReloadButton-stack"  >
+		<xul:toolbarbutton id="stop-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+				label="&stopCmd.label;" command="Browser:Stop" tooltiptext="&stopButton.tooltip;"/>
+		<xul:toolbarbutton id="reload-button" class="toolbarbutton-1 chromeclass-toolbar-additional"
+				label="&reloadCmd.label;" command="Browser:Reload" tooltiptext="&reloadButton.tooltip;"/> 				
+		</xul:hbox> 
+    </content>
+  </binding>
+</bindings>
+
+

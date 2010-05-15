@@ -1,0 +1,24 @@
+.tabbrowser-tab {
+  -moz-box-direction: normal !important;
+}
+.tabbrowser-tab .tab-close-button {
+  -moz-box-ordinal-group: 1 !important;
+}
+
+.tab-icon,
+.tab-icon-image {
+  -moz-box-ordinal-group: 2 !important;
+}
+
+.tab-text {
+  -moz-box-ordinal-group: 3 !important;
+  margin-left: 2px !important;
+}
+
+.tab-icon-image {
+  opacity: 0.5 !important;
+  margin-left: 1px;
+}
+.tabbrowser-tab[selected="true"] .tab-icon-image {
+  opacity: 1.0 !important;
+}

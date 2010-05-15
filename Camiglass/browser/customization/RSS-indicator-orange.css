@@ -1,0 +1,11 @@
+#feed-button {
+  list-style-image: url("chrome://browser/skin/customization/firefox-page-livemarks.png") !important;
+  -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+  padding-right: 1px !important;
+}
+
+#feed-button[open="true"],
+#feed-button:hover:active {
+  -moz-image-region: rect(16px, 16px, 32px, 0px) !important;
+}
+

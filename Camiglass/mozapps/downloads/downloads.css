@@ -1,0 +1,170 @@
+
+
+#downloadView {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -moz-appearance: none;
+}
+
+ /* Download View Items */
+ richlistitem[type="download"] {
+  padding: 5px;
+  min-height: 44px !important;
+  border: 1px solid transparent;
+  color: #2f2f2f;
+}
+ 
+richlistitem[type="download"]:not([selected="true"]):nth-child(odd) {
+   background-color: -moz-oddtreerow;
+ }
+
+richlistitem[type="download"] .dateTime,
+richlistitem[type="download"] .status {
+   font-size: smaller;
+   color: #555555;
+ }
+ 
+
+richlistitem[selected="true"][type="download"] {
+  background-color: #3973C0;
+  -moz-border-image: url(chrome://global/skin/icons/listitem.png) 1 stretch;
+}
+
+richlistbox:focus > richlistitem[selected="true"][type="download"] {
+  background-color: #8496B9;
+  -moz-border-image: url(chrome://global/skin/icons/listitem-focused.png) 1 stretch;
+  outline: none;
+}
+
+richlistitem[selected="true"][type="download"]:-moz-system-metric(mac-graphite-theme) {
+  background-color: #60748A;
+  -moz-border-image: url(chrome://global/skin/icons/listitem-graphite.png) 1 stretch;
+}
+
+richlistbox:focus > richlistitem[selected="true"][type="download"]:-moz-system-metric(mac-graphite-theme) {
+  background-color: #95A4B2;
+  -moz-border-image: url(chrome://global/skin/icons/listitem-graphite-focused.png) 1 stretch;
+}
+
+window:not([active]) richlistitem[selected="true"][type="download"] {
+  background-color: #A1A1A1;
+  -moz-border-image: url(chrome://global/skin/icons/listitem-inactive.png) 1 stretch;
+}
+
+richlistitem[selected="true"][type="download"] label {
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 1px;
+ }
+ 
+ richlistitem[type="download"] button {
+  -moz-appearance: none;
+  min-height: 16px;
+  min-width: 16px;
+  max-height: 16px;
+  max-width: 16px;
+  padding: 0;
+  margin: 0 1px 0 1px;
+}
+
+
+
+/**
+ * Images for buttons in the interface
+ */
+richlistitem[type="download"] button {
+  list-style-image: url(chrome://mozapps/skin/downloads/buttons.png);
+}
+.cancel {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+.cancel:hover {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+.cancel:active {
+  -moz-image-region: rect(32px, 32px, 48px, 16px);
+}
+.pause {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+.pause:hover {
+  -moz-image-region: rect(16px, 48px, 32px, 32px);
+}
+.pause:active {
+  -moz-image-region: rect(32px, 48px, 48px, 32px);
+}
+.pause[disabled="true"] {
+  -moz-image-region: rect(48px, 48px, 64px, 32px);
+}
+.resume {
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+.resume:hover {
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+.resume:active {
+  -moz-image-region: rect(32px, 16px, 48px, 0px);
+}
+.retry {
+  -moz-image-region: rect(0px, 64px, 16px, 48px);
+}
+.retry:hover {
+  -moz-image-region: rect(16px, 64px, 32px, 48px);
+}
+.retry:active {
+  -moz-image-region: rect(32px, 64px, 48px, 48px);
+}
+
+.blockedIcon {
+  list-style-image: url(chrome://global/skin/icons/Error.png);
+}
+
+/* prevent flickering when changing states */
+.downloadTypeIcon {
+  min-height: 32px;
+  min-width: 32px;
+  -moz-padding-end: 2px;
+}
+
+
+
+window[active] #search {
+  border-top: 1px solid #555555 !important;
+  background: -moz-mac-chrome-active url("chrome://mozapps/skin/downloads/download_bg.png") repeat; 
+}
+
+#search {
+  border-top: 1px solid #878787 !important;
+  -moz-box-pack: end;
+  -moz-padding-end: 3px;
+  background: -moz-mac-chrome-inactive url("chrome://mozapps/skin/downloads/download_bg-inactive.png") repeat; 
+}
+
+
+#clearListButton  {
+  -moz-appearance: none;
+  min-width: 1px !important;
+  padding: 0px;
+  margin: -1px 0px 0px 7px;
+  border-width: 3px 6px !important;
+  -moz-border-image: url("chrome://global/skin/toolbar/roundrectbutton.png") 3 6 3 6 / 3px 6px 3px 6px repeat stretch;
+  text-shadow: rgba(255, 255, 255, 0.4) 0 1px;
+}
+
+#clearListButton:active:hover {
+  -moz-border-image: url("chrome://global/skin/toolbar/roundrectbutton-down.png") 3 6 3 6 / 3px 6px 3px 6px repeat stretch;
+}
+
+window:not([active]) #clearListButton {
+  -moz-border-image: url("chrome://global/skin/toolbar/roundrectbutton-inactive.png") 3 6 3 6 / 3px 6px 3px 6px repeat stretch;
+  color: #5F5F5F;
+}
+
+#clearListButton .button-text {
+  margin: 0 2px !important;
+}
+
+#searchbox {
+ margin: 2px 8px 4px 3px;
+}
+
